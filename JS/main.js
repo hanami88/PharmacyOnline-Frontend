@@ -170,11 +170,9 @@ const sanphamall = document.querySelector(".sanpham-all");
 const xoasp = document.querySelector(".xoasp");
 const quaylai = document.querySelector(".thongbao-quaylai");
 const tieptuc = document.querySelector(".thongbao-tieptuc");
-const tamtinh = document.querySelector(".giohang-tongtien__tamtinh-thanhtien");
+const tamtinh = document.querySelector(".giohang-tongtien__tamtinh-tt");
 const giamgiatong = document.querySelector(".giamgiatong");
-const tongthanhtien = document.querySelector(
-  ".giohang-tongtien__tongtien-thanhtien"
-);
+const tongthanhtien = document.querySelector(".giohang-tongtien__tongtien-tt");
 const hienthiso = document.querySelector(".hienthiso");
 
 const tatmuahang = document.querySelector(".fa-circle-xmark");
@@ -236,12 +234,20 @@ themvaogio.addEventListener("click", (e) => {
   let giamgiadiv = document.createElement("div");
   minus.classList.add("fa-solid", "fa-minus");
   let spansoluong = document.createElement("div");
-  minus.addEventListener("click", () => {
+  minus.addEventListener("click", (a) => {
     if (minus.nextElementSibling.textContent !== "1") {
+      let closest = a.target.closest(".box-sanphamthem");
+      let i = closest.querySelector(".keydiv").textContent;
       minus.nextElementSibling.textContent =
         Number(minus.nextElementSibling.textContent) - 1;
+      let cart = JSON.parse(sessionStorage.getItem(i));
+      cart.soluong = Number(cart.soluong) - 1;
+      sessionStorage.setItem(i, JSON.stringify(cart));
       let div = document.createElement("div");
       let dongiatmp = dongia.querySelector(".dg");
+      let keydiv = document.createElement("div");
+      keydiv.classList.add("keydiv");
+      keydiv.textContent = i;
       div.textContent =
         (
           convertToNumber(thanhtien.textContent.slice(0, -2)) -
@@ -249,7 +255,7 @@ themvaogio.addEventListener("click", (e) => {
         ).toLocaleString("vi-VN") + " ₫";
       thanhtiendiv.textContent = div.textContent;
       thanhtien.textContent = "";
-      thanhtien.append(div, trash);
+      thanhtien.append(div, trash, keydiv);
       tamtinh.textContent =
         (
           convertToNumber(tamtinh.textContent.slice(0, -2)) -
@@ -271,11 +277,19 @@ themvaogio.addEventListener("click", (e) => {
     }
   });
   plus.classList.add("fa-solid", "fa-plus");
-  plus.addEventListener("click", () => {
+  plus.addEventListener("click", (a) => {
+    let closest = a.target.closest(".box-sanphamthem");
+    let i = closest.querySelector(".keydiv").textContent;
     plus.previousElementSibling.textContent =
       Number(plus.previousElementSibling.textContent) + 1;
+    let cart = JSON.parse(sessionStorage.getItem(i));
+    cart.soluong = Number(cart.soluong) + 1;
+    sessionStorage.setItem(i, JSON.stringify(cart));
     let div = document.createElement("div");
     let dongiatmp = dongia.querySelector(".dg");
+    let keydiv = document.createElement("div");
+    keydiv.classList.add("keydiv");
+    keydiv.textContent = i;
     div.textContent =
       (
         convertToNumber(thanhtien.textContent.slice(0, -2)) +
@@ -283,7 +297,7 @@ themvaogio.addEventListener("click", (e) => {
       ).toLocaleString("vi-VN") + " ₫";
     thanhtiendiv.textContent = div.textContent;
     thanhtien.textContent = "";
-    thanhtien.append(div, trash);
+    thanhtien.append(div, trash, keydiv);
     tamtinh.textContent =
       (
         convertToNumber(tamtinh.textContent.slice(0, -2)) +
@@ -313,8 +327,6 @@ themvaogio.addEventListener("click", (e) => {
   let donggiadiv = document.createElement("div");
   donggiadiv.classList.add("dg");
   donggiadiv.innerHTML = muahang.querySelector(".muahang-gia").innerHTML;
-
-  console.log(giamgiadiv.innerHTML.slice(3, -6));
   tongthanhtien.textContent =
     (
       convertToNumber(tongthanhtien.textContent.slice(0, -2)) +
@@ -349,7 +361,6 @@ themvaogio.addEventListener("click", (e) => {
       "click",
       () => {
         let soluongso = soluong.querySelector("div").textContent;
-        console.log(soluongso);
         tongthanhtien.textContent =
           (
             convertToNumber(tongthanhtien.textContent.slice(0, -2)) -
@@ -369,15 +380,35 @@ themvaogio.addEventListener("click", (e) => {
               )) *
               soluongso
           ).toLocaleString("vi-VN") + " ₫";
-        e.target.closest(".sanpham-all-box").remove();
-        xoasp.classList.remove("active");
-        console.log();
         if (hienthiso.children[0].textContent === "1") {
           hienthiso.classList.remove("active");
+          hienthiso.children[0].textContent =
+            Number(hienthiso.children[0].textContent) - 1;
         } else {
           hienthiso.children[0].textContent =
             Number(hienthiso.children[0].textContent) - 1;
         }
+        sessionStorage.removeItem(e.target.nextElementSibling.textContent);
+        let keytmp = document.querySelectorAll(".keydiv");
+        for (
+          let j = Number(e.target.nextElementSibling.textContent);
+          j <= sessionStorage.length - 1;
+          j++
+        ) {
+          let tmp = JSON.parse(sessionStorage.getItem(j + 1));
+          sessionStorage.setItem(j, JSON.stringify(tmp));
+          if (j < sessionStorage.length - 1) {
+            keytmp[j].textContent = j;
+          }
+        }
+        if (
+          Number(e.target.nextElementSibling.textContent) <=
+          sessionStorage.length - 2
+        ) {
+          sessionStorage.removeItem(sessionStorage.length - 1);
+        }
+        e.target.closest(".sanpham-all-box").remove();
+        xoasp.classList.remove("active");
       },
       { once: true }
     );
@@ -389,7 +420,19 @@ themvaogio.addEventListener("click", (e) => {
       { once: true }
     );
   });
-  thanhtien.append(thanhtiendiv, trash);
+  if (!hienthiso.classList.contains("active")) {
+    hienthiso.classList.add("active");
+    hienthiso.children[0].textContent =
+      Number(hienthiso.children[0].textContent) + 1;
+  } else {
+    hienthiso.children[0].textContent =
+      Number(hienthiso.children[0].textContent) + 1;
+  }
+  let keydiv = document.createElement("div");
+  keydiv.classList.add("keydiv");
+  let key = hienthiso.children[0].textContent;
+  keydiv.textContent = key;
+  thanhtien.append(thanhtiendiv, trash, keydiv);
   soluong.append(minus, spansoluong, plus);
   sanphamthem.append(img_giohang, spthemmota, dongia, soluong, thanhtien);
   sanpham_all_box.append(gachchanto, sanphamthem);
@@ -401,12 +444,18 @@ themvaogio.addEventListener("click", (e) => {
   setTimeout(() => {
     datthanhcong.classList.remove("active");
   }, 1500);
-  if (!hienthiso.classList.contains("active")) {
-    hienthiso.classList.add("active");
-  } else {
-    hienthiso.children[0].textContent =
-      Number(hienthiso.children[0].textContent) + 1;
-  }
+  let temp = {
+    img: img_giohang.src,
+    dongia: donggiadiv.textContent,
+    giamgiadiv: giamgiadiv.innerHTML,
+    soluong: spansoluong.textContent,
+    thanhtien: thanhtiendiv.textContent,
+    mota: spthemmota.textContent,
+  };
+  sessionStorage.setItem(
+    hienthiso.children[0].textContent,
+    JSON.stringify(temp)
+  );
 });
 
 const QR = document.querySelector(".QR");
@@ -452,3 +501,228 @@ choice.addEventListener("click", () => {
     mt.style.transform = "rotate(90deg)";
   }
 });
+function realoadPage() {
+  for (let i = 1; i <= sessionStorage.length - 1; i++) {
+    let Json = JSON.parse(sessionStorage.getItem(i));
+    let sanpham_all_box = document.createElement("div");
+    sanpham_all_box.classList.add("sanpham-all-box");
+    let gachchanto = document.createElement("div");
+    gachchanto.classList.add("gachchan-to");
+    let sanphamthem = document.createElement("div");
+    sanphamthem.classList.add("box-sanphamthem");
+    let img_giohang = document.createElement("img");
+    img_giohang.classList.add("box-sanphamthem-img");
+    let spthemmota = document.createElement("div");
+    spthemmota.classList.add("box-sanphamthem-mota");
+    let dongia = document.createElement("div");
+    dongia.classList.add("dongia");
+    let soluong = document.createElement("div");
+    let minus = document.createElement("i");
+    let plus = document.createElement("i");
+    let thanhtiendiv = document.createElement("div");
+    let giamgiadiv = document.createElement("div");
+    minus.classList.add("fa-solid", "fa-minus");
+    let spansoluong = document.createElement("div");
+    minus.addEventListener("click", () => {
+      if (minus.nextElementSibling.textContent !== "1") {
+        minus.nextElementSibling.textContent =
+          Number(minus.nextElementSibling.textContent) - 1;
+        let cart = JSON.parse(sessionStorage.getItem(i));
+        cart.soluong = Number(cart.soluong) - 1;
+        sessionStorage.setItem(i, JSON.stringify(cart));
+        let div = document.createElement("div");
+        let dongiatmp = dongia.querySelector(".dg");
+        let keydiv = document.createElement("div");
+        keydiv.classList.add("keydiv");
+        keydiv.textContent = i;
+        div.textContent =
+          (
+            convertToNumber(thanhtien.textContent.slice(0, -2)) -
+            convertToNumber(dongiatmp.textContent.slice(0, -2))
+          ).toLocaleString("vi-VN") + " ₫";
+        thanhtiendiv.textContent = div.textContent;
+        thanhtien.textContent = "";
+        thanhtien.append(div, trash, keydiv);
+        tamtinh.textContent =
+          (
+            convertToNumber(tamtinh.textContent.slice(0, -2)) -
+            convertToNumber(giamgiadiv.innerHTML.slice(3, -6))
+          ).toLocaleString("vi-VN") + " ₫";
+        tongthanhtien.textContent =
+          (
+            convertToNumber(tongthanhtien.textContent.slice(0, -2)) -
+            convertToNumber(donggiadiv.textContent.slice(0, -2))
+          ).toLocaleString("vi-VN") + " ₫";
+        giamgiatong.textContent =
+          (
+            convertToNumber(giamgiatong.textContent.slice(0, -2)) -
+            (convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) -
+              convertToNumber(
+                dongia.querySelector(".dg").textContent.slice(0, -2)
+              ))
+          ).toLocaleString("vi-VN") + " ₫";
+      }
+    });
+    plus.classList.add("fa-solid", "fa-plus");
+    plus.addEventListener("click", () => {
+      plus.previousElementSibling.textContent =
+        Number(plus.previousElementSibling.textContent) + 1;
+      let cart = JSON.parse(sessionStorage.getItem(i));
+      cart.soluong = Number(cart.soluong) + 1;
+      sessionStorage.setItem(i, JSON.stringify(cart));
+      let div = document.createElement("div");
+      let dongiatmp = dongia.querySelector(".dg");
+      let keydiv = document.createElement("div");
+      keydiv.classList.add("keydiv");
+      keydiv.textContent = i;
+      div.textContent =
+        (
+          convertToNumber(thanhtien.textContent.slice(0, -2)) +
+          convertToNumber(dongiatmp.textContent.slice(0, -2))
+        ).toLocaleString("vi-VN") + " ₫";
+      thanhtiendiv.textContent = div.textContent;
+      thanhtien.textContent = "";
+      thanhtien.append(div, trash, keydiv);
+      tamtinh.textContent =
+        (
+          convertToNumber(tamtinh.textContent.slice(0, -2)) +
+          convertToNumber(giamgiadiv.innerHTML.slice(3, -6))
+        ).toLocaleString("vi-VN") + " ₫";
+      tongthanhtien.textContent =
+        (
+          convertToNumber(tongthanhtien.textContent.slice(0, -2)) +
+          convertToNumber(donggiadiv.textContent.slice(0, -2))
+        ).toLocaleString("vi-VN") + " ₫";
+      giamgiatong.textContent =
+        (
+          convertToNumber(giamgiatong.textContent.slice(0, -2)) +
+          (convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) -
+            convertToNumber(
+              dongia.querySelector(".dg").textContent.slice(0, -2)
+            ))
+        ).toLocaleString("vi-VN") + " ₫";
+    });
+
+    soluong.classList.add("soluong");
+    let thanhtien = document.createElement("div");
+    thanhtien.classList.add("thanhtien");
+    let trash = document.createElement("i");
+    trash.classList.add("fa-solid", "fa-trash");
+    img_giohang.src = Json.img;
+    spthemmota.textContent = Json.mota;
+    giamgiadiv.innerHTML = Json.giamgiadiv;
+    let donggiadiv = document.createElement("div");
+    donggiadiv.classList.add("dg");
+    donggiadiv.textContent = Json.dongia;
+    tongthanhtien.textContent =
+      (
+        convertToNumber(tongthanhtien.textContent.slice(0, -2)) +
+        convertToNumber(donggiadiv.textContent.slice(0, -2)) *
+          Number(Json.soluong)
+      ).toLocaleString("vi-VN") + " ₫";
+    tamtinh.textContent =
+      (
+        convertToNumber(tamtinh.textContent.slice(0, -2)) +
+        convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) *
+          Number(Json.soluong)
+      ).toLocaleString("vi-VN") + " ₫";
+    donggiadiv.textContent = donggiadiv.textContent.slice(0, -2) + " ₫";
+    dongia.append(giamgiadiv, donggiadiv);
+    giamgiatong.textContent =
+      (
+        convertToNumber(giamgiatong.textContent.slice(0, -2)) +
+        (convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) -
+          convertToNumber(
+            dongia.querySelector(".dg").textContent.slice(0, -2)
+          )) *
+          Number(Json.soluong)
+      ).toLocaleString("vi-VN") + " ₫";
+    thanhtiendiv.innerHTML =
+      (
+        convertToNumber(donggiadiv.textContent.slice(0, -2)) *
+        Number(Json.soluong)
+      ).toLocaleString("vi-VN") + " ₫";
+    spansoluong.textContent = Json.soluong;
+    trash.addEventListener("click", (e) => {
+      xoasp.classList.add("active");
+      tieptuc.addEventListener(
+        "click",
+        () => {
+          let soluongso = soluong.querySelector("div").textContent;
+          tongthanhtien.textContent =
+            (
+              convertToNumber(tongthanhtien.textContent.slice(0, -2)) -
+              convertToNumber(thanhtiendiv.textContent.slice(0, -2))
+            ).toLocaleString("vi-VN") + " ₫";
+          tamtinh.textContent =
+            (
+              convertToNumber(tamtinh.textContent.slice(0, -2)) -
+              convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) * soluongso
+            ).toLocaleString("vi-VN") + " ₫";
+          giamgiatong.textContent =
+            (
+              convertToNumber(giamgiatong.textContent.slice(0, -2)) -
+              (convertToNumber(giamgiadiv.innerHTML.slice(3, -6)) -
+                convertToNumber(
+                  dongia.querySelector(".dg").textContent.slice(0, -2)
+                )) *
+                soluongso
+            ).toLocaleString("vi-VN") + " ₫";
+
+          if (hienthiso.children[0].textContent === "1") {
+            hienthiso.classList.remove("active");
+            hienthiso.children[0].textContent =
+              Number(hienthiso.children[0].textContent) - 1;
+          } else {
+            hienthiso.children[0].textContent =
+              Number(hienthiso.children[0].textContent) - 1;
+          }
+          sessionStorage.removeItem(e.target.nextElementSibling.textContent);
+          let keytmp = document.querySelectorAll(".keydiv");
+          for (let j = i; j <= sessionStorage.length - 1; j++) {
+            let tmp = JSON.parse(sessionStorage.getItem(j + 1));
+            sessionStorage.setItem(j, JSON.stringify(tmp));
+            if (j < sessionStorage.length - 1) {
+              keytmp[j].textContent = j;
+            }
+          }
+          if (i <= sessionStorage.length - 2) {
+            sessionStorage.removeItem(sessionStorage.length - 1);
+          }
+          e.target.closest(".sanpham-all-box").remove();
+          xoasp.classList.remove("active");
+        },
+        { once: true }
+      );
+      quaylai.addEventListener(
+        "click",
+        () => {
+          xoasp.classList.remove("active");
+        },
+        { once: true }
+      );
+    });
+    if (!hienthiso.classList.contains("active")) {
+      hienthiso.classList.add("active");
+      hienthiso.children[0].textContent =
+        Number(hienthiso.children[0].textContent) + 1;
+    } else {
+      hienthiso.children[0].textContent =
+        Number(hienthiso.children[0].textContent) + 1;
+    }
+    let keydiv = document.createElement("div");
+    keydiv.classList.add("keydiv");
+    let key = hienthiso.children[0].textContent;
+    keydiv.textContent = key;
+    thanhtien.append(thanhtiendiv, trash, keydiv);
+    soluong.append(minus, spansoluong, plus);
+    sanphamthem.append(img_giohang, spthemmota, dongia, soluong, thanhtien);
+    sanpham_all_box.append(gachchanto, sanphamthem);
+    sanphamall.append(sanpham_all_box);
+    muahang.classList.remove("active");
+    html.style.overflow = "scroll";
+    soluongmuahang.textContent = "1";
+  }
+}
+
+realoadPage();

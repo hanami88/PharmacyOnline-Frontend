@@ -343,6 +343,7 @@ html {
   display: flex;
   justify-content: space-between;
   height: 320px;
+  width: 83.5vw;
 }
 .ad1 {
   position: relative;
@@ -1067,15 +1068,11 @@ html {
   color: gray;
 }
 .mauxanhtieuchuan {
-  background-color: #00a2ff;
+  background-color: #1a51a2;
   width: 100vw;
   height: 8px;
 }
 
-.end {
-  height: 515px;
-  background-color: rgb(228, 228, 228);
-}
 .trangdangnhap {
   opacity: 0;
   position: fixed;
@@ -1810,5 +1807,271 @@ html {
 
 .trangchinh {
   width: 100vw;
-  height: 400vh;
+  height: 500vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.trangchinh-container > :nth-child(1) {
+  font-size: 25px;
+  font-weight: 550;
+}
+
+.trangchinh-container {
+  margin-top: 50px;
+  width: 85vw;
+}
+.sapxep {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.box-ss {
+  padding: 10px 15px;
+  border: 1.5px solid white;
+  border-radius: 8px;
+  color: white;
+  font-weight: 550;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #1a51a2;
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+.chuasanpham {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 22px;
+}
+.chuasanpham .banchay {
+  background-color: white;
+}
+.end {
+  margin-top: 100px;
+  height: 550px;
+  background-color: #ededed;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.keydiv {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.end-container {
+  margin-top: 0px;
+  display: flex;
+  width: 1210px;
+  justify-content: space-between;
+  height: 420px;
+}
+
+.end-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.end-box > :nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.end-box5 {
+  height: 135px;
+}
+.end-box5 > :nth-child(2) {
+  display: flex;
+}
+.end-box5 > :nth-child(2) > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
+  margin-top: 10px;
+}
+.end-box5 > :nth-child(2) > :nth-child(1) > :nth-child(1) {
+  width: 95px;
+  height: 95px;
+  margin-right: 10px;
+}
+.end-box5 > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) {
+  width: 115px;
+  height: 35px;
+}
+.end-box5 > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(1) {
+  width: 115px;
+  height: 35px;
+}
+.end-box3 > :nth-child(2) > :nth-child(2) {
+  display: flex;
+}
+.end-box3 > :nth-child(3) > :nth-child(2) {
+  display: flex;
+}
+.end-box3 > :nth-child(4) > :nth-child(2) {
+  display: flex;
+}
+.end-box3 > :nth-child(2) > :nth-child(2) > :nth-child(1) {
+  color: #1a51a2;
+  font-weight: 700;
+  margin-right: 6px;
+}
+.end-box3 > :nth-child(3) > :nth-child(2) > :nth-child(1) {
+  color: #1a51a2;
+  font-weight: 700;
+  margin-right: 6px;
+}
+.end-box3 > :nth-child(4) > :nth-child(2) > :nth-child(1) {
+  color: #1a51a2;
+  margin-right: 6px;
+  font-weight: 700;
+}
+
+.nhanh {
+  color: #787878;
+}
+.end-box3 > :nth-child(2) > :nth-child(1) {
+  margin-bottom: 12px;
+}
+.end-box3 > :nth-child(3) > :nth-child(1) {
+  margin-bottom: 12px;
+}
+.end-box3 > :nth-child(4) > :nth-child(1) {
+  margin-bottom: 12px;
+}
+.end-box3 > :nth-child(4) {
+  margin-bottom: 15px;
+}
+.end-box3 {
+  height: 275px;
+  margin-left: 70px;
+}
+.end-box3 > :nth-child(5) > :nth-child(1) {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.end-box3 > :nth-child(5) > :nth-child(2) > :nth-child(1) {
+  width: 27px;
+  height: 27px;
+  margin-right: 5px;
+}
+.end-box3 > :nth-child(5) > :nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+.end-box4 > :nth-child(2) > :nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+.end-box4 > :nth-child(3) > :nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+.end-box4 > :nth-child(4) > :nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+.end-box4 > :nth-child(2) > :nth-child(1) > :nth-child(1) {
+  width: 24px;
+  height: 22.85px;
+  margin-right: 10px;
+}
+.end-box4 > :nth-child(3) > :nth-child(1) > :nth-child(1) {
+  width: 24px;
+  height: 20px;
+  margin-right: 10px;
+}
+.end-box4 > :nth-child(4) > :nth-child(1) > :nth-child(1) {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+.end-box4 > :nth-child(2) > :nth-child(1) {
+  text-decoration: none;
+  color: black;
+}
+.end-box4 > :nth-child(3) > :nth-child(1) {
+  text-decoration: none;
+  color: black;
+}
+.end-box4 > :nth-child(4) > :nth-child(1) {
+  text-decoration: none;
+  color: black;
+}
+.chungnhan {
+  width: 84px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.thanhtoan {
+  width: 42px;
+  height: 29px;
+}
+
+.end-box4 {
+  height: 300px;
+}
+
+.zalo-end {
+  margin-bottom: 20px;
+}
+
+.chungnhan-container > :nth-child(1) {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.chungnhan-container > :nth-child(1) > :nth-child(1) {
+  margin-right: 5px;
+}
+.hotrothanhtoan-end {
+  font-weight: 600;
+}
+.hotrothanhtoan-end > :nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.gachchanmax {
+  width: 1210px;
+  background-color: rgba(158, 158, 158, 0.493);
+  height: 1px;
+  margin-top: 20px;
+}
+.end-end {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  width: 1210px;
+  margin-top: 12px;
+}
+
+.end-end > :nth-child(1) > :nth-child(1) {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.end-end > :nth-child(1) > :nth-child(2) {
+  line-height: 15px;
+}
+.end-end > :nth-child(2) > :nth-child(1) {
+  line-height: 15px;
 }
