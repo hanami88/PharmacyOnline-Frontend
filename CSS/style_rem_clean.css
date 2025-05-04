@@ -2,15 +2,66 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 62.5%;
+}
+
+@media (min-width: 2561px) {
+  html {
+    font-size: 75%; /* 1rem = 12px → phóng to nhẹ */
+  }
+}
+
+/* === Laptop lớn, iMac: 1441px - 2560px === */
+@media (min-width: 1441px) and (max-width: 2560px) {
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+}
+
+/* === Laptop phổ thông: 1281px - 1440px === */
+@media (min-width: 1281px) and (max-width: 1440px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* === Tablet ngang / Laptop nhỏ: 1025px - 1280px === */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  html {
+    font-size: 56.25%; /* 1rem = 9px */
+  }
+}
+
+/* === Tablet dọc / Mobile lớn: 769px - 1024px === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 50%; /* 1rem = 8px */
+  }
+}
+
+/* === Mobile phổ thông: 577px - 768px === */
+@media (min-width: 577px) and (max-width: 768px) {
+  html {
+    font-size: 46.875%; /* 1rem = 7.5px */
+  }
+}
+
+/* === Mobile nhỏ: ≤ 576px === */
+@media (max-width: 576px) {
+  html {
+    font-size: 43.75%; /* 1rem = 7px */
+  }
 }
 
 html {
   font-family: "Inter", serif;
+  margin: 0rem;
+  font-size: 62.5%;
 }
 body {
   overflow-x: hidden;
+  font-size: 1.6rem;
 }
+
 .boc img {
   user-select: none;
 }
@@ -18,9 +69,10 @@ body {
   background-color: rgb(149, 239, 255);
   text-align: center;
 }
+
 .pcheader {
-  width: 1200px;
-  height: 50px;
+  width: 120rem;
+  height: 5rem;
   margin: 0;
   padding: 0;
 }
@@ -30,54 +82,54 @@ body {
 .header-line {
   display: flex;
   background-color: rgb(242, 244, 246);
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
   font-weight: 450;
   color: rgb(43, 43, 43);
   align-items: center;
-  height: 30px;
+  height: 3rem;
 }
 .header-line * {
   cursor: pointer;
 }
 .header-line div:nth-child(1) {
-  margin-left: 150px;
-  margin-right: 50px;
+  margin-left: 15rem;
+  margin-right: 5rem;
 }
 .header-line div:nth-child(2) {
-  margin-right: 280px;
+  margin-right: 28rem;
 }
 .header-line div:nth-child(3) {
-  margin-right: 7px;
+  margin-right: 0.7rem;
 }
 .header-line div:nth-child(5) {
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 .header-line div:nth-child(6) {
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 .header-line div:nth-child(7) {
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 
 .header-line div:nth-child(4) {
   color: rgb(26, 81, 162);
   font-weight: 700;
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 
 .header-line1 {
   display: flex;
   background-color: rgb(26, 81, 162);
-  height: 140px;
+  height: 14rem;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 .header-line-left img {
-  width: 180px;
-  margin-right: 15px;
-  margin-bottom: 20px;
+  width: 18rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .right1 {
@@ -85,32 +137,32 @@ body {
   align-items: center;
 }
 .right2 {
-  margin-top: 3px;
-  margin-bottom: 30px;
+  margin-top: 0.3rem;
+  margin-bottom: 3rem;
   display: flex;
-  font-size: 14.5px;
+  font-size: 1.45rem;
   justify-content: space-between;
-  width: 700px;
+  width: 70rem;
   color: aliceblue;
 }
 .right3 {
   display: flex;
   justify-content: space-between;
-  width: 950px;
+  width: 95rem;
   color: aliceblue;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 .header-line2__search {
-  width: 700px;
-  border-radius: 5px;
-  height: 40px;
+  width: 70rem;
+  border-radius: 0.5rem;
+  height: 4rem;
   border: none;
-  padding-left: 40px;
+  padding-left: 4rem;
   margin: auto 0;
-  padding-top: 1px;
-  font-size: 15px;
+  padding-top: 0.1rem;
+  font-size: 1.5rem;
   outline: none;
   font-weight: 600;
 }
@@ -118,9 +170,9 @@ body {
   color: rgb(120, 120, 120);
 }
 .fa-bell.fa-solid {
-  font-size: 30px;
+  font-size: 3rem;
   color: aliceblue;
-  margin-left: 30px;
+  margin-left: 3rem;
   cursor: pointer;
   &:hover {
     opacity: 0.9;
@@ -129,13 +181,13 @@ body {
 }
 .hienthiso.active {
   background-color: #f26321;
-  width: 22px;
-  height: 22px;
+  width: 2.2rem;
+  height: 2.2rem;
   position: absolute;
-  top: -8px;
-  right: -12px;
+  top: -0.8rem;
+  right: -1.2rem;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 0.1rem solid white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,15 +200,15 @@ body {
   position: absolute;
 }
 .hienthiso-so {
-  font-size: 13px;
+  font-size: 1.3rem;
   font-weight: 700;
   font-family: "Inter", serif;
 }
 .fa-cart-plus.fa-solid {
-  font-size: 30px;
+  font-size: 3rem;
   color: aliceblue;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 3rem;
+  margin-right: 3rem;
   cursor: pointer;
   position: relative;
   &:hover {
@@ -166,15 +218,15 @@ body {
 }
 .header-line2__login {
   color: rgb(43, 43, 43);
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 600;
-  height: 36px;
-  width: 164px;
+  height: 3.6rem;
+  width: 16.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: aliceblue;
-  border-radius: 25px;
+  border-radius: 2.5rem;
   cursor: pointer;
   &:hover {
     color: rgb(26, 81, 162);
@@ -196,27 +248,27 @@ body {
   }
 }
 .fa-solid.fa-circle-user {
-  font-size: 21px;
-  margin-right: 5px;
+  font-size: 2.1rem;
+  margin-right: 0.5rem;
 }
 .fa-solid.fa-bars {
-  margin-right: 15px;
-  font-size: 20px;
+  margin-right: 1.5rem;
+  font-size: 2rem;
 }
 .fa-solid.fa-chevron-right {
-  margin-left: 25px;
+  margin-left: 2.5rem;
   transition: 0.3s all;
 }
 .choice p {
-  margin-right: 10px;
-  margin-left: -5px;
+  margin-right: 1rem;
+  margin-left: -0.5rem;
 }
 .choice {
   background-color: rgb(255, 255, 255);
-  height: 35px;
-  width: 180px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 3.5rem;
+  width: 18rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -228,9 +280,9 @@ body {
   font-weight: 500;
 }
 .vietnam {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
 }
 .chua {
   display: flex;
@@ -239,26 +291,26 @@ body {
 }
 
 .fa-solid.fa-qrcode {
-  font-size: 15px;
-  margin-right: 5px;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
 }
 .QR {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 40px;
+  height: 4rem;
 }
 .thongtintaiud.active {
   position: absolute;
-  width: 400px;
-  height: 260px;
-  top: 40px;
+  width: 40rem;
+  height: 26rem;
+  top: 4rem;
   left: 0;
   z-index: 3;
   background-color: white;
-  border-radius: 7px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 0.7rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
   cursor: default;
   opacity: 1;
   visibility: visible;
@@ -272,26 +324,26 @@ body {
   transform: scale(0.8);
 }
 .thongtintaiud.active > :nth-child(1) {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .thongtintaiud.active > :nth-child(2) > :nth-child(1) {
-  width: 115px;
-  height: 115px;
-  margin-left: 20px;
+  width: 11.5rem;
+  height: 11.5rem;
+  margin-left: 2rem;
 }
 .thongtintaiud.active > :nth-child(2) > :nth-child(2) * {
   cursor: default;
 }
 .thongtintaiud.active > :nth-child(2) > :nth-child(2) {
-  width: 230px;
+  width: 23rem;
   cursor: default;
   list-style: disc;
-  height: 140px;
+  height: 14rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -299,27 +351,27 @@ body {
 .thongtintaiud.active > :nth-child(3) {
   display: flex;
   justify-content: space-between;
-  width: 365px;
-  margin-top: 10px;
-  margin-left: 18px;
+  width: 36.5rem;
+  margin-top: 1rem;
+  margin-left: 1.8rem;
   cursor: default;
 }
 .thongtintaiud.active > :nth-child(3) * {
-  width: 175px;
-  height: 50px;
+  width: 17.5rem;
+  height: 5rem;
 }
 
 .thongtintaiud.active > :nth-child(2) {
   display: flex;
   justify-content: space-between;
-  width: 390px;
+  width: 39rem;
   cursor: default;
 }
 
 .new {
-  width: 32px;
-  height: 16px;
-  margin-left: 5px;
+  width: 3.2rem;
+  height: 1.6rem;
+  margin-left: 0.5rem;
 }
 
 .container__new {
@@ -334,35 +386,37 @@ body {
   position: relative;
 }
 .fa-solid.fa-magnifying-glass {
-  font-size: 20px;
+  font-size: 2rem;
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 1.1rem;
+  left: 1.1rem;
 }
 
 .menu {
-  width: 83.5vw;
-  margin: 20px auto;
+  width: 83.5%;
+  margin: 2rem auto;
+  max-width: 120rem;
 }
 .ad {
   display: flex;
   justify-content: space-between;
-  height: 320px;
+  height: 32rem;
   width: 83.5vw;
+  max-width: 120rem;
 }
 .ad1 {
   position: relative;
-  width: 800px;
-  height: 310px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-  border-radius: 15px;
-  border-radius: 15px;
+  width: 80rem;
+  height: 31rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 3rem 6rem -1.2rem inset,
+    rgba(0, 0, 0, 0.3) 0rem 1.8rem 3.6rem -1.8rem inset;
+  border-radius: 1.5rem;
+  border-radius: 1.5rem;
   overflow: hidden;
 }
 .ad1-first {
-  width: 800px;
-  height: 310px;
+  width: 80rem;
+  height: 31rem;
   position: relative;
   overflow: hidden;
 }
@@ -372,17 +426,17 @@ body {
   top: 0;
   right: 100%;
   transition: 0.2s all ease-in;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   cursor: pointer;
 }
 .ad1-first-p img {
-  width: 800px;
-  height: 310px;
+  width: 80rem;
+  height: 31rem;
   position: absolute;
-  border-radius: 15px;
-  top: 0px;
-  left: 0px;
-  border-radius: 15px;
+  border-radius: 1.5rem;
+  top: 0rem;
+  left: 0rem;
+  border-radius: 1.5rem;
 }
 
 .ad1 :nth-child(2) {
@@ -411,35 +465,35 @@ body {
 }
 
 .ad2-first img {
-  width: 380px;
-  height: 145px;
-  border-radius: 15px;
-  margin-bottom: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  width: 38rem;
+  height: 14.5rem;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 3rem 6rem -1.2rem inset,
+    rgba(0, 0, 0, 0.3) 0rem 1.8rem 3.6rem -1.8rem inset;
   cursor: pointer;
 }
 .ad2-last img {
-  width: 380px;
-  height: 145px;
-  border-radius: 15px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  width: 38rem;
+  height: 14.5rem;
+  border-radius: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 3rem 6rem -1.2rem inset,
+    rgba(0, 0, 0, 0.3) 0rem 1.8rem 3.6rem -1.8rem inset;
   cursor: pointer;
 }
 .ad {
   position: relative;
 }
 .fa-solid.fa-chevron-up.btn-right {
-  font-size: 40px;
-  top: 135px;
-  right: 383px;
+  font-size: 4rem;
+  top: 13.5rem;
+  right: 38.3rem;
   position: absolute;
   background-color: rgb(253, 250, 250);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgb(0, 0, 0) 0px 22px 70px 4px;
+  box-shadow: rgb(0, 0, 0) 0rem 2.2rem 7rem 0.4rem;
   transform: rotate(90deg);
   opacity: 0.7;
   &:hover {
@@ -447,15 +501,15 @@ body {
   }
 }
 .fa-solid.fa-chevron-up.btn-left {
-  font-size: 40px;
-  top: 135px;
-  left: -22px;
+  font-size: 4rem;
+  top: 13.5rem;
+  left: -2.2rem;
   position: absolute;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgb(0, 0, 0) 0px 22px 70px 4px;
+  box-shadow: rgb(0, 0, 0) 0rem 2.2rem 7rem 0.4rem;
   border-radius: 50%;
   transform: rotate(-90deg);
   opacity: 0.7;
@@ -467,15 +521,15 @@ body {
 .ad1 .cham {
   display: flex;
   position: absolute;
-  bottom: 25px;
-  left: 270px;
-  width: 70px;
+  bottom: 2.5rem;
+  left: 27rem;
+  width: 7rem;
   justify-content: space-between;
 }
 
 .cham div {
-  width: 10px;
-  height: 8px;
+  width: 1rem;
+  height: 0.8rem;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);
   opacity: 0.5;
@@ -485,33 +539,34 @@ body {
   opacity: 1;
 }
 .menu-option {
-  margin: 10px auto;
+  margin: 1rem auto;
   display: flex;
   width: 78vw;
   flex-wrap: wrap;
-  gap: 25px 80px;
-  height: 200px;
+  gap: 2.5rem 8rem;
+  height: 20rem;
+  max-width: 120rem;
 }
 .menu-option-box {
-  height: 106px;
-  width: 70px;
+  height: 10.6rem;
+  width: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .menu-option-box span {
-  margin-top: 3px;
+  margin-top: 0.3rem;
   text-align: center;
-  font-size: 14.5px;
+  font-size: 1.45rem;
   font-weight: 500;
-  line-height: 18px;
+  line-height: 1.8rem;
 }
 
 .option-box {
-  margin-bottom: 5px;
-  width: 62px;
-  height: 62px;
-  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  border-radius: 1rem;
   cursor: pointer;
   &:hover {
     transform: scale(1.15);
@@ -519,9 +574,9 @@ body {
 }
 
 .sandeal {
-  margin-top: 100px;
+  margin-top: 10rem;
   width: 100vw;
-  height: 500px;
+  height: 50rem;
   background-color: #0093e9;
   background-color: #4158d0;
   background-color: #08aeea;
@@ -534,150 +589,152 @@ body {
 }
 .sandeal-time {
   width: 80vw;
-  height: 80px;
+  height: 8rem;
   background-color: #0093e9;
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
   position: absolute;
-  top: -30px;
-  left: 140px;
-  border-radius: 25% 25% 10px 10px;
+  top: -3rem;
+  left: 14rem;
+  border-radius: 25% 25% 1rem 1rem;
 }
 .sandeal-time img {
   position: absolute;
-  width: 180px;
-  height: 45px;
-  top: 20px;
-  left: 20px;
+  width: 18rem;
+  height: 4.5rem;
+  top: 2rem;
+  left: 2rem;
 }
 .sandeal-time-timegg {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
+  width: 20rem;
   position: absolute;
-  top: 26px;
-  left: 200px;
+  top: 2.6rem;
+  left: 20rem;
 }
 .sandeal-time-timegg div {
-  padding: 10px 7px;
-  font-size: 19px;
+  padding: 1rem 0.7rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: red;
   background-color: white;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 .sandeal-time-timegg span {
   color: white;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 7px;
+  margin: 0 0.7rem;
 }
 
 .sandeal-menu__thanhchon {
   display: flex;
   width: 210vw;
   justify-content: space-between;
-  margin: 0 15px;
-  margin-top: 20px;
+  margin: 0 1.5rem;
+  margin-top: 2rem;
   transition: 0.4s ease-in-out;
+  max-width: 303rem;
 }
 .sandeal-menu {
   overflow: hidden;
-  width: 1230px;
-  height: 430px;
-  margin-top: 50px;
-  border-radius: 8px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px 100px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  width: 123rem;
+  height: 43rem;
+  margin-top: 5rem;
+  max-width: 123rem;
+  border-radius: 0.8rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 3rem 6rem 10rem inset,
+    rgba(0, 0, 0, 0.3) 0rem 1.8rem 3.6rem -1.8rem inset;
 }
 .buy-box {
-  border-radius: 8px;
-  width: 185px;
-  height: 390px;
+  border-radius: 0.8rem;
+  width: 18.5rem;
+  height: 39rem;
   background-color: rgb(255, 255, 255);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0rem 0.1rem 0.2rem 0rem,
+    rgba(60, 64, 67, 0.15) 0rem 0.1rem 0.3rem 0.1rem;
 }
 
 .buy-box :nth-child(1) {
-  width: 185px;
-  border-radius: 8px 8px 0px 0px;
-  border: 1px solid white;
+  width: 18.5rem;
+  border-radius: 0.8rem 0.8rem 0rem 0rem;
+  border: 0.1rem solid white;
 }
 .sandeal-box-tieude {
-  width: 185px;
-  height: 20px;
+  width: 18.5rem;
+  height: 2rem;
   font-weight: 550;
-  font-size: 14px;
+  font-size: 1.4rem;
   overflow: hidden;
-  width: 170px;
-  height: 41px;
-  line-height: 20px;
+  width: 17rem;
+  height: 4.1rem;
+  line-height: 2rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin: 4px 8px;
+  margin: 0.4rem 0.8rem;
 }
 .sandeal-box-giamgia {
-  margin: 8px 8px 10px 8px;
+  margin: 0.8rem 0.8rem 1rem 0.8rem;
   color: rgb(158, 153, 153);
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 550;
   display: block;
 }
 .sandeal-box-gia {
-  margin: 8px 8px 10px 8px;
+  margin: 0.8rem 0.8rem 1rem 0.8rem;
   color: rgb(26, 81, 162);
   font-weight: 700;
 }
 .sandeal-box-like {
   display: flex;
-  margin-left: 8px;
-  margin-top: 10px;
+  margin-left: 0.8rem;
+  margin-top: 1rem;
   align-items: center;
 }
 .sandeal-box-like :nth-child(1) {
-  width: 20px;
+  width: 2rem;
   color: rgb(111, 106, 106);
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 .sandeal-box-like :nth-child(2) {
-  width: 50px;
-  font-size: 14px;
+  width: 5rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 .sandeal-box-like :nth-child(3) {
-  width: 85px;
-  font-size: 14px;
+  width: 8.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
 }
 
 .banchay {
-  width: 170px;
-  padding-top: 2.7px;
+  width: 17rem;
+  padding-top: 0.27rem;
   margin: 0 auto;
   background-color: rgb(252, 0, 0);
-  height: 18px;
-  border-radius: 25px;
-  font-size: 12px;
+  height: 1.8rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
   color: white;
   font-weight: 600;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 1.2rem;
 }
 .sandeal-box-buy {
   background-color: rgb(26, 81, 162);
-  width: 170px;
-  height: 37px;
+  width: 17rem;
+  height: 3.7rem;
   color: white;
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   border: none;
-  border-radius: 9px;
-  margin: 8px 8px 10px 8px;
+  border-radius: 0.9rem;
+  margin: 0.8rem 0.8rem 1rem 0.8rem;
   cursor: pointer;
   &:hover {
     background-color: rgb(0, 37, 92);
@@ -685,36 +742,36 @@ body {
 }
 
 .fa-solid.fa-chevron-up.sandeal-right {
-  font-size: 40px;
-  top: 265px;
-  right: 65px;
+  font-size: 4rem;
+  top: 26.5rem;
+  right: 6.5rem;
   position: absolute;
   background-color: rgb(253, 250, 250);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 1.3rem 2.7rem -0.5rem,
+    rgba(0, 0, 0, 0.3) 0rem 0.8rem 1.6rem -0.8rem;
   transform: rotate(90deg);
 }
 .fa-solid.fa-chevron-up.sandeal-left {
-  font-size: 40px;
-  top: 265px;
-  left: 65px;
+  font-size: 4rem;
+  top: 26.5rem;
+  left: 6.5rem;
   position: absolute;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 1.3rem 2.7rem -0.5rem,
+    rgba(0, 0, 0, 0.3) 0rem 0.8rem 1.6rem -0.8rem;
   border-radius: 50%;
   transform: rotate(-90deg);
 }
 .hotdeal {
-  margin-top: 20px;
+  margin-top: 2rem;
   width: 100vw;
-  height: 460px;
+  height: 46rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -723,89 +780,99 @@ body {
 }
 .hotdeal-menu {
   overflow: hidden;
-  width: 1230px;
-  height: 400px;
-  border-radius: 8px;
-  margin-top: 35px;
+  width: 123rem;
+  height: 40rem;
+  border-radius: 0.8rem;
+  margin-top: 3.5rem;
+  position: relative;
 }
 .hotdeal-thanhchon {
   display: flex;
   width: 210vw;
   justify-content: space-between;
-  margin: 5px 15px;
+  margin: 0.5rem 1.5rem;
   transition: 0.5s ease-in-out;
+  max-width: 303rem;
 }
 
 .hotdeal h1 {
   position: absolute;
-  top: 12px;
-  left: 120px;
-  font-size: 23px;
+  top: 1.2rem;
+  left: 12rem;
+  font-size: 2.3rem;
   font-weight: 550;
 }
 .fa-solid.fa-chevron-up.hotdeal-right {
-  font-size: 40px;
-  top: 220px;
-  right: 65px;
+  font-size: 4rem;
+  top: 17rem;
+  right: 0rem;
   position: absolute;
   background-color: rgb(253, 250, 250);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 1.3rem 2.7rem -0.5rem,
+    rgba(0, 0, 0, 0.3) 0rem 0.8rem 1.6rem -0.8rem;
   transform: rotate(90deg);
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
 }
 .fa-solid.fa-chevron-up.hotdeal-left {
-  font-size: 40px;
-  top: 220px;
-  left: 75px;
+  font-size: 4rem;
+  top: 17rem;
+  left: 0rem;
   position: absolute;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0rem 1.3rem 2.7rem -0.5rem,
+    rgba(0, 0, 0, 0.3) 0rem 0.8rem 1.6rem -0.8rem;
   border-radius: 50%;
   transform: rotate(-90deg);
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
 }
 .hotdeal-thanhchon.version1 .banchay {
   background-color: white;
 }
 .thuonghieu {
   width: 100vw;
-  height: 580px;
+  height: 58rem;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .thuonghieu-thanhchon {
-  width: 1215px;
+  width: 121.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 .thuonghieu img {
-  height: 485px;
-  width: 290px;
+  height: 48.5rem;
+  width: 29rem;
   cursor: pointer;
 }
 .thuonghieu h1 {
   position: absolute;
-  top: 15px;
-  left: 115px;
-  font-size: 23px;
+  top: 1.5rem;
+  left: 11.5rem;
+  font-size: 2.3rem;
   font-weight: 550;
 }
 .spbanchay {
-  margin-top: 20px;
+  margin-top: 2rem;
   width: 100vw;
-  height: 600px;
+  height: 60rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -814,61 +881,61 @@ body {
 }
 .spbanchay h1 {
   position: absolute;
-  top: 20px;
-  left: 105px;
-  font-size: 23px;
+  top: 2rem;
+  left: 10.5rem;
+  font-size: 2.3rem;
   font-weight: 550;
 }
 .banchay-thanhchon {
-  width: 1230px;
-  height: 510px;
+  width: 123rem;
+  height: 51rem;
   display: grid;
-  grid-template-columns: repeat(4, 300px);
-  grid-template-rows: repeat(2, 250px);
-  gap: 10px;
-  margin-top: 40px;
-  border-radius: 20px;
+  grid-template-columns: repeat(4, 30rem);
+  grid-template-rows: repeat(2, 25rem);
+  gap: 1rem;
+  margin-top: 4rem;
+  border-radius: 2rem;
 }
 .banchay-box__pic {
-  border-radius: 20px;
+  border-radius: 2rem;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0rem 0.5rem 1.5rem;
 }
 
 .banchay-box1 {
   grid-row: 1 / 3;
   grid-column: 1 /3;
-  width: 600px;
-  height: 510px;
+  width: 60rem;
+  height: 51rem;
 }
 .banchay-box2 {
-  width: 300px;
-  height: 250px;
+  width: 30rem;
+  height: 25rem;
 }
 
 .gocsuckhoe {
   display: flex;
   position: relative;
-  height: 490px;
+  height: 49rem;
   align-items: start;
   align-items: center;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 2rem;
   background-color: aliceblue;
 }
 .thanchonsuckhoe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1230px;
-  margin-top: 55px;
+  width: 123rem;
+  margin-top: 5.5rem;
 }
 
 .thanchonsuckhoe span {
-  padding: 10px 15px;
+  padding: 1rem 1.5rem;
   background-color: rgb(237, 234, 234);
-  border-radius: 25px;
-  font-size: 14px;
+  border-radius: 2.5rem;
+  font-size: 1.4rem;
   font-weight: 550;
   cursor: pointer;
   &:hover {
@@ -879,22 +946,22 @@ body {
 
 .gocsuckhoe h1 {
   position: absolute;
-  top: 20px;
-  left: 105px;
-  font-size: 23px;
+  top: 2rem;
+  left: 10.5rem;
+  font-size: 2.3rem;
   font-weight: 550;
 }
 .skbox-pic {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
 }
 
 .baibaosuckhoe {
-  margin-top: 20px;
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(3, 400px);
-  grid-template-rows: repeat(3, 110px);
-  gap: 15px;
+  grid-template-columns: repeat(3, 40rem);
+  grid-template-rows: repeat(3, 11rem);
+  gap: 1.5rem;
 }
 .skbox1 {
   grid-row: 1 / 4;
@@ -926,14 +993,14 @@ body {
 }
 
 .skbox img {
-  width: 150px;
-  height: 100px;
-  border-radius: 5px;
+  width: 15rem;
+  height: 10rem;
+  border-radius: 0.5rem;
 }
 .skbox1 img {
-  width: 400px;
-  height: 240px;
-  border-radius: 5px;
+  width: 40rem;
+  height: 24rem;
+  border-radius: 0.5rem;
 }
 .skbox1.skbox {
   display: flex;
@@ -942,29 +1009,29 @@ body {
 }
 
 .skbox-tt {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: white;
-  padding: 4px 6px;
+  padding: 0.4rem 0.6rem;
   font-weight: 500;
   background-color: rgb(64, 63, 63);
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 .skbox1 :nth-child(2) {
-  padding: 4px 6px;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  padding: 0.4rem 0.6rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
 }
 .skbox1 {
-  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
 }
 .skbox.skbox1 :nth-child(3) {
   font-weight: 550;
-  line-height: 24px;
-  width: 380px;
+  line-height: 2.4rem;
+  width: 38rem;
 }
 .skbox.skbox1 :nth-child(4) {
-  font-size: 14.5px;
-  line-height: 20px;
+  font-size: 1.45rem;
+  line-height: 2rem;
 }
 .skbox {
   display: flex;
@@ -976,56 +1043,56 @@ body {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
-  height: 100px;
-  margin-left: 10px;
+  height: 10rem;
+  margin-left: 1rem;
 }
 
 .container-skbox :nth-child(1) {
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 .container-skbox :nth-child(2) {
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 550;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 .container-skbox :nth-child(3) {
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
 }
 .gioithieu h1 {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  margin: 20px 0px;
+  margin: 2rem 0rem;
 }
 
 .gioithieu {
-  margin: 20px 0;
+  margin: 2rem 0;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .container-gioithieu {
-  width: 1230px;
+  width: 123rem;
 }
 
 .gioithieu-td {
   font-weight: 600;
-  font-size: 14.5px;
-  line-height: 21px;
+  font-size: 1.45rem;
+  line-height: 2.1rem;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 
 .gioithieu-nd {
   display: block;
-  font-size: 14.5px;
-  line-height: 20px;
-  margin-bottom: 25px;
+  font-size: 1.45rem;
+  line-height: 2rem;
+  margin-bottom: 2.5rem;
 }
 .container-gioithieu :nth-child(2) {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .gioithieu a {
@@ -1037,9 +1104,9 @@ body {
 }
 
 .tieuchuan-box img {
-  width: 40px;
-  margin-right: 6px;
-  height: 40px;
+  width: 4rem;
+  margin-right: 0.6rem;
+  height: 4rem;
 }
 
 .tieuchuan-box {
@@ -1050,12 +1117,12 @@ body {
 
 .tieuchuan-container {
   display: flex;
-  width: 1230px;
+  width: 123rem;
   justify-content: space-between;
 }
 
 .tieuchuan {
-  height: 80px;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1063,19 +1130,19 @@ body {
 }
 
 .tieuchuan-box-2 :nth-child(1) {
-  font-size: 15px;
+  font-size: 1.5rem;
   color: #004f7d;
   font-weight: 600;
-  margin-bottom: 7px;
+  margin-bottom: 0.7rem;
 }
 .tieuchuan-box-2 :nth-child(2) {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: gray;
 }
 .mauxanhtieuchuan {
   background-color: #1a51a2;
   width: 100vw;
-  height: 8px;
+  height: 0.8rem;
 }
 
 .trangdangnhap {
@@ -1099,66 +1166,69 @@ body {
 }
 
 .trang-login {
-  width: 410px;
-  height: 450px;
+  width: 41rem;
+  height: 45rem;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 2rem;
   display: flex;
   justify-content: start;
   align-items: start;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0rem 0.1rem 0.2rem,
+    rgba(0, 0, 0, 0.07) 0rem 0.2rem 0.4rem,
+    rgba(0, 0, 0, 0.07) 0rem 0.4rem 0.8rem,
+    rgba(0, 0, 0, 0.07) 0rem 0.8rem 1.6rem,
+    rgba(0, 0, 0, 0.07) 0rem 1.6rem 3.2rem,
+    rgba(0, 0, 0, 0.07) 0rem 3.2rem 6.4rem;
 }
 .trang-login-container :nth-child(1) {
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: 600;
-  margin-top: 25px;
-  margin-bottom: 17px;
+  margin-top: 2.5rem;
+  margin-bottom: 1.7rem;
 }
 .trang-login-form {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 .trang-login-form :nth-child(1) {
-  font-size: 16px;
-  margin-top: 15px;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
   font-weight: 600;
 }
 .trang-login__name {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  height: 55px;
-  width: 360px;
-  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  height: 5.5rem;
+  width: 36rem;
+  border-radius: 0.8rem;
   outline: none;
-  border: 1.2px solid rgb(178, 178, 178);
-  padding-left: 15px;
-  font-size: 17px;
+  border: 0.12rem solid rgb(178, 178, 178);
+  padding-left: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
   &:focus {
-    border: 1.2px solid black;
+    border: 0.12rem solid black;
   }
 }
 .trang-login__name::placeholder {
-  font-size: 17px;
+  font-size: 1.7rem;
   font-weight: 600;
   opacity: 0.7;
 }
 .trang-login__tenpass {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .trang-login-container {
-  margin-left: 25px;
+  margin-left: 2.5rem;
 }
 .trang-login__enter {
-  margin-top: 5px;
-  width: 360px;
+  margin-top: 0.5rem;
+  width: 36rem;
   background-color: rgb(0, 74, 202);
-  height: 50px;
-  border-radius: 8px;
+  height: 5rem;
+  border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1169,24 +1239,24 @@ body {
   cursor: pointer;
 }
 .trang-login__enter :nth-child(1) {
-  margin-top: 18px;
+  margin-top: 1.8rem;
 }
 
 .hoac {
-  margin-left: 155px;
-  font-size: 17px;
+  margin-left: 15.5rem;
+  font-size: 1.7rem;
   color: gray;
   font-weight: 600;
   opacity: 0.7;
-  margin-top: 70px;
-  margin-bottom: 20px;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
 }
 .google-btn {
-  margin-top: 5px;
-  width: 360px;
+  margin-top: 0.5rem;
+  width: 36rem;
   background-color: rgba(128, 128, 128, 0.181);
-  height: 50px;
-  border-radius: 8px;
+  height: 5rem;
+  border-radius: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1198,19 +1268,19 @@ body {
   }
 }
 .google-btn :nth-child(1) {
-  width: 20px;
-  height: 20px;
-  margin-right: 7px;
-  margin-top: 17px;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.7rem;
+  margin-top: 1.7rem;
 }
 .x {
   position: absolute;
-  right: 13px;
-  top: -15px;
+  right: 1.3rem;
+  top: -1.5rem;
   cursor: pointer;
 }
 .x :nth-child(1) {
-  font-size: 25px;
+  font-size: 2.5rem;
   &:hover {
     opacity: 0.6;
   }
@@ -1239,105 +1309,105 @@ body {
   width: 85vw;
   height: 90vh;
   background-color: aliceblue;
-  border-radius: 25px;
+  border-radius: 2.5rem;
   display: flex;
   position: relative;
 }
 
 .giohang-sanpham {
-  margin-top: 20px;
-  margin-left: 25px;
+  margin-top: 2rem;
+  margin-left: 2.5rem;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 2.5rem;
 }
 .giohang-sanpham > :nth-child(1) {
-  margin-top: 20px;
-  margin-left: 10px;
-  font-size: 25px;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  font-size: 2.5rem;
   font-weight: 600;
 }
 .giohang-sanpham > :nth-child(2) {
-  margin-top: 22px;
-  margin-left: 20px;
+  margin-top: 2.2rem;
+  margin-left: 2rem;
 }
 .giohang-mota {
   display: flex;
   justify-content: space-between;
-  width: 850px;
+  width: 85rem;
 }
 .sanpham-all {
   overflow: scroll;
-  height: 520px;
+  height: 52rem;
 }
 .giohang-mota > :nth-child(2) {
-  margin-left: 230px;
+  margin-left: 23rem;
 }
 .giohang-mota > :nth-child(4) {
-  margin-right: 70px;
+  margin-right: 7rem;
 }
 
 .giohang-tongtien {
-  width: 290px;
-  height: 400px;
+  width: 29rem;
+  height: 40rem;
   background-color: rgb(255, 255, 255);
-  margin-left: 30px;
-  margin-top: 120px;
-  border-radius: 25px;
+  margin-left: 3rem;
+  margin-top: 12rem;
+  border-radius: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .gachchan {
-  width: 250px;
+  width: 25rem;
   background-color: rgba(158, 158, 158, 0.493);
-  height: 1px;
-  margin-top: 40px;
+  height: 0.1rem;
+  margin-top: 4rem;
 }
 .gachchan-to {
-  width: 830px;
+  width: 83rem;
   background-color: rgba(158, 158, 158, 0.493);
-  height: 1px;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 15px;
+  height: 0.1rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
 }
 .giohang-tongtien__tamtinh {
   display: flex;
   justify-content: space-between;
-  width: 250px;
-  margin-top: 40px;
+  width: 25rem;
+  margin-top: 4rem;
 }
 .giohang-tongtien__tamtinh > :nth-child(2) {
   font-weight: 600;
 }
 .giohang-tongtien__tongtien {
   display: flex;
-  width: 250px;
-  margin-top: 40px;
+  width: 25rem;
+  margin-top: 4rem;
   justify-content: space-between;
 }
 .giohang-tongtien__tongtien > :nth-child(1) {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 .giohang-tongtien__tongtien > :nth-child(2) {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   color: red;
 }
 
 .giohang-tongtien__btn {
-  width: 250px;
-  height: 50px;
+  width: 25rem;
+  height: 5rem;
   background-color: #004f7d;
-  margin-top: 50px;
-  border-radius: 10px;
+  margin-top: 5rem;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
   &:hover {
@@ -1347,80 +1417,80 @@ body {
 
 .fa-rectangle-xmark {
   position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 30px;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   &:hover {
     opacity: 0.8;
   }
 }
 .box-sanphamthem-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  margin-top: 5px;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2rem;
+  margin-top: 0.5rem;
 }
 .box-sanphamthem {
-  width: 830px;
-  height: 90px;
+  width: 83rem;
+  height: 9rem;
   display: flex;
   justify-content: start;
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 
 .box-sanphamthem-mota {
-  width: 250px;
-  font-size: 13.5px;
+  width: 25rem;
+  font-size: 1.35rem;
   font-weight: 600;
-  line-height: 18px;
-  margin-left: 15px;
-  margin-top: 5px;
+  line-height: 1.8rem;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
 }
 .dongia {
-  margin-left: 75px;
-  font-size: 14px;
+  margin-left: 7.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-right: 50px;
-  width: 105px;
-  margin-top: 7px;
+  margin-right: 5rem;
+  width: 10.5rem;
+  margin-top: 0.7rem;
 }
 .dongia :nth-child(1) {
   color: rgb(160, 160, 160);
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 .soluong {
-  margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 70px;
-  font-size: 14px;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 7rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  width: 100px;
+  width: 10rem;
 }
 
 .thanhtien {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
-  width: 150px;
-  margin-left: 15px;
-  margin-top: 15px;
+  width: 15rem;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .fa-minus {
-  font-size: 15px;
-  padding: 2px 3px;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.3rem;
   background-color: gray;
   border-radius: 50%;
   cursor: pointer;
-  margin-right: 17px;
+  margin-right: 1.7rem;
   &:hover {
     opacity: 0.8;
   }
 }
 .fa-plus {
-  font-size: 15px;
-  margin-left: 18px;
-  padding: 2px 3px;
+  font-size: 1.5rem;
+  margin-left: 1.8rem;
+  padding: 0.2rem 0.3rem;
   background-color: gray;
   border-radius: 50%;
   cursor: pointer;
@@ -1429,12 +1499,12 @@ body {
   }
 }
 .fa-trash {
-  margin-left: 10px;
+  margin-left: 1rem;
   cursor: pointer;
   &:hover {
     color: #003656;
   }
-  font-size: 17px;
+  font-size: 1.7rem;
 }
 
 .xoasp.active {
@@ -1443,8 +1513,8 @@ body {
   background-color: rgba(0, 0, 0, 0.287);
   z-index: 1;
   position: absolute;
-  top: -35px;
-  left: -108px;
+  top: -3.5rem;
+  left: -10.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1457,28 +1527,28 @@ body {
   position: absolute;
 }
 .thongbaochacchan {
-  width: 480px;
-  height: 220px;
+  width: 48rem;
+  height: 22rem;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 .thongbaochacchan :nth-child(1) {
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: 550;
-  margin: 25px 25px;
+  margin: 2.5rem 2.5rem;
 }
 .thongbaochacchan :nth-child(2) {
-  font-size: 16px;
-  margin: 20px 25px;
+  font-size: 1.6rem;
+  margin: 2rem 2.5rem;
 }
 .thongbao-quaylai {
-  margin-top: 35px;
-  margin-left: 220px;
-  width: 110px;
-  height: 55px;
-  font-size: 16px;
+  margin-top: 3.5rem;
+  margin-left: 22rem;
+  width: 11rem;
+  height: 5.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -1487,15 +1557,15 @@ body {
   }
 }
 .thongbao-tieptuc {
-  margin-top: 35px;
-  margin-left: 20px;
-  width: 110px;
-  height: 55px;
+  margin-top: 3.5rem;
+  margin-left: 2rem;
+  width: 11rem;
+  height: 5.5rem;
   background-color: #005a8e;
   color: white;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 15px;
+  border-radius: 1.5rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -1505,12 +1575,12 @@ body {
 }
 .soluong :nth-child(2) {
   display: inline-block;
-  width: 10px;
+  width: 1rem;
   user-select: none;
 }
 
 .thanhtien :nth-child(1) {
-  width: 100px;
+  width: 10rem;
   display: inline-block;
 }
 
@@ -1537,38 +1607,53 @@ body {
 }
 
 .muahang-container {
-  width: 58vw;
-  height: 70vh;
+  width: 85rem;
+  height: 50rem;
   background-color: rgb(255, 255, 255);
-  border-radius: 10px;
+  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 4rem;
 }
 .muahang-container img {
-  width: 420px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  height: 420px;
-  border-radius: 10px;
+  width: 42rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0rem 0.1rem 0.3rem,
+    rgba(0, 0, 0, 0.24) 0rem 0.1rem 0.2rem;
+  height: 42rem;
+  border-radius: 1rem;
 }
 .muahang-right {
-  width: 380px;
-  margin-left: 10px;
+  width: 38rem;
+  margin-left: 1rem;
 }
-.muahang.active > :nth-child(1) {
+.muahang-nth1 {
+  position: relative;
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+.muahang-nth1 > :nth-child(1) {
   position: absolute;
-  top: 120px;
-  left: 320px;
-  font-size: 20px;
+  top: 2rem;
+  left: -40.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
-.muahang.active > :nth-child(2) {
+.muahang-nth1 > :nth-child(2) {
   position: absolute;
-  top: 115px;
-  left: 1100px;
-  font-size: 25px;
+  top: 1.2rem;
+  left: 38.7rem;
+  font-size: 2.5rem;
   color: #1a51a2;
   cursor: pointer;
   &:hover {
@@ -1577,82 +1662,82 @@ body {
 }
 .muahang-right > :nth-child(1) {
   background-color: #00a2ff4c;
-  padding: 5px;
-  width: 300px;
-  font-size: 14px;
+  padding: 0.5rem;
+  width: 30rem;
+  font-size: 1.4rem;
   color: #0093e9;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 .muahang-right > :nth-child(2) {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 25px;
-  margin-bottom: 15px;
+  line-height: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .muahang-right > :nth-child(3) {
   color: rgba(128, 128, 128, 0.708);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .muahang-right > :nth-child(4) {
-  font-size: 27px;
+  font-size: 2.7rem;
   font-weight: 700;
   color: #1a51a2;
 }
 .muahang-right > :nth-child(5) {
-  margin-top: 15px;
-  font-size: 14px;
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
   color: #faae14;
   font-weight: 600;
 }
 
 .muahang-right > :nth-child(6) {
-  width: 380px;
+  width: 38rem;
   background-color: rgba(158, 158, 158, 0.493);
-  height: 1px;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  height: 0.1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 .muahang-right > :nth-child(7) {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .muahang-right > :nth-child(8) {
   display: flex;
   align-items: center;
-  width: 80px;
-  margin-bottom: 45px;
+  width: 8rem;
+  margin-bottom: 4.5rem;
 }
 .muahang-right > :nth-child(9) {
   display: flex;
   flex-direction: column;
 }
 .muahang-right > :nth-child(9) > :nth-child(1) {
-  height: 40px;
-  margin-bottom: 15px;
+  height: 4rem;
+  margin-bottom: 1.5rem;
   color: white;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1.6rem;
   background-color: #1a51a2;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 1rem;
   &:hover {
     background-color: #113160;
   }
   cursor: pointer;
 }
 .muahang-right > :nth-child(9) > :nth-child(2) {
-  height: 40px;
+  height: 4rem;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1.6rem;
   background-color: white;
-  border: 1px solid #1a51a2;
+  border: 0.1rem solid #1a51a2;
   outline: none;
-  border-radius: 10px;
+  border-radius: 1rem;
   color: #1a51a2;
   &:hover {
     color: #183f7a;
@@ -1662,15 +1747,15 @@ body {
 }
 
 .soluongmuahang {
-  width: 30px;
+  width: 3rem;
   text-align: center;
 }
 
 .trumuahang {
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 .congmuahang {
-  margin-left: 5px;
+  margin-left: 0.5rem;
 }
 
 .datthanhcong.active {
@@ -1694,7 +1779,7 @@ body {
   width: 27vw;
   height: 25vh;
   background-color: rgba(0, 0, 0, 0.852);
-  border-radius: 10px;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1702,16 +1787,16 @@ body {
 }
 .datthanhcong-container > :nth-child(1) {
   color: white;
-  font-size: 30px;
+  font-size: 3rem;
   background-color: #1a51a2;
-  padding: 6.5px 9px;
+  padding: 0.65rem 0.9rem;
   border-radius: 50%;
 }
 .datthanhcong-container > :nth-child(2) {
-  margin-top: 30px;
+  margin-top: 3rem;
   color: white;
-  font-size: 18px;
-  width: 300px;
+  font-size: 1.8rem;
+  width: 30rem;
   text-align: center;
 }
 
@@ -1720,7 +1805,7 @@ body {
   height: 200vh;
   background-color: rgba(0, 0, 0, 0.446);
   position: absolute;
-  top: 140px;
+  top: 14rem;
   z-index: 1;
   opacity: 1;
   visibility: visible;
@@ -1741,11 +1826,11 @@ body {
 
 .danhmucdathang-container > :nth-child(1) {
   width: 25%;
-  border-right: 1px solid rgb(179, 179, 179);
+  border-right: 0.1rem solid rgb(179, 179, 179);
 }
 .danhmucdathang-container > :nth-child(1) img {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
 }
 .danhmucdathang-container > :nth-child(2) {
   width: 45%;
@@ -1754,19 +1839,19 @@ body {
   width: 28%;
 }
 .danhmucdathang-container > :nth-child(3) > :nth-child(1) {
-  width: 280px;
-  height: 500px;
-  margin-top: 30px;
-  margin-left: 50px;
+  width: 28rem;
+  height: 50rem;
+  margin-top: 3rem;
+  margin-left: 5rem;
 }
 .danhmuc-box {
   display: flex;
   align-items: center;
-  margin-left: 80px;
-  margin-top: 30px;
-  height: 70px;
-  border-radius: 7px;
-  width: 260px;
+  margin-left: 8rem;
+  margin-top: 3rem;
+  height: 7rem;
+  border-radius: 0.7rem;
+  width: 26rem;
   &:hover {
     background-color: #9fdbfd89;
     color: #006097;
@@ -1774,19 +1859,19 @@ body {
   cursor: pointer;
 }
 .danhmuc-box img {
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 .danhmucdathang-container > :nth-child(2) img {
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgb(208, 208, 208);
-  border-radius: 7px;
+  width: 10rem;
+  height: 10rem;
+  border: 0.1rem solid rgb(208, 208, 208);
+  border-radius: 0.7rem;
 }
 .boxdanhmuc.active {
   display: flex;
   position: absolute;
   top: 0;
-  left: 360px;
+  left: 36rem;
   width: 45%;
   height: 80vh;
   opacity: 1;
@@ -1798,16 +1883,16 @@ body {
   position: absolute;
 }
 .boxdanhmuc-box :nth-child(2) {
-  width: 100px;
+  width: 10rem;
   text-align: center;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.4rem;
+  line-height: 2rem;
   font-weight: 500;
 }
 .boxdanhmuc-box {
-  margin: 30px 0px 0px 15px;
+  margin: 3rem 0rem 0rem 1.5rem;
   cursor: pointer;
-  height: 142px;
+  height: 14.2rem;
 }
 
 .trangchinh {
@@ -1815,36 +1900,36 @@ body {
   height: 500vh;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 
 .trangchinh-container > :nth-child(1) {
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: 550;
 }
 
 .trangchinh-container {
-  margin-top: 50px;
+  margin-top: 5rem;
   width: 85vw;
 }
 .sapxep {
-  margin-top: 40px;
+  margin-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 400px;
-  font-size: 15px;
+  width: 40rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .box-ss {
-  padding: 10px 15px;
-  border: 1.5px solid white;
-  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  border: 0.15rem solid white;
+  border-radius: 0.8rem;
   color: white;
   font-weight: 550;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.6rem;
   background-color: #1a51a2;
   opacity: 0.6;
   &:hover {
@@ -1852,20 +1937,20 @@ body {
   }
 }
 .chuasanpham {
-  margin-top: 30px;
+  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 22px;
+  gap: 2.2rem;
 }
 .chuasanpham .banchay {
   background-color: white;
 }
 .end {
-  margin-top: 100px;
-  height: 550px;
+  margin-top: 10rem;
+  height: 55rem;
   background-color: #ededed;
-  margin-top: 0px;
+  margin-top: 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1879,27 +1964,27 @@ body {
 }
 
 .end-container {
-  margin-top: 0px;
+  margin-top: 0rem;
   display: flex;
-  width: 1210px;
+  width: 121rem;
   justify-content: space-between;
-  height: 420px;
+  height: 42rem;
 }
 
 .end-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .end-box > :nth-child(1) {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 7px;
+  margin-bottom: 0.7rem;
 }
 .end-box5 {
-  height: 135px;
+  height: 13.5rem;
 }
 .end-box5 > :nth-child(2) {
   display: flex;
@@ -1908,21 +1993,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 80px;
-  margin-top: 10px;
+  height: 8rem;
+  margin-top: 1rem;
 }
 .end-box5 > :nth-child(2) > :nth-child(1) > :nth-child(1) {
-  width: 95px;
-  height: 95px;
-  margin-right: 10px;
+  width: 9.5rem;
+  height: 9.5rem;
+  margin-right: 1rem;
 }
 .end-box5 > :nth-child(2) > :nth-child(2) > :nth-child(1) > :nth-child(1) {
-  width: 115px;
-  height: 35px;
+  width: 11.5rem;
+  height: 3.5rem;
 }
 .end-box5 > :nth-child(2) > :nth-child(2) > :nth-child(2) > :nth-child(1) {
-  width: 115px;
-  height: 35px;
+  width: 11.5rem;
+  height: 3.5rem;
 }
 .end-box3 > :nth-child(2) > :nth-child(2) {
   display: flex;
@@ -1936,16 +2021,16 @@ body {
 .end-box3 > :nth-child(2) > :nth-child(2) > :nth-child(1) {
   color: #1a51a2;
   font-weight: 700;
-  margin-right: 6px;
+  margin-right: 0.6rem;
 }
 .end-box3 > :nth-child(3) > :nth-child(2) > :nth-child(1) {
   color: #1a51a2;
   font-weight: 700;
-  margin-right: 6px;
+  margin-right: 0.6rem;
 }
 .end-box3 > :nth-child(4) > :nth-child(2) > :nth-child(1) {
   color: #1a51a2;
-  margin-right: 6px;
+  margin-right: 0.6rem;
   font-weight: 700;
 }
 
@@ -1953,29 +2038,29 @@ body {
   color: #787878;
 }
 .end-box3 > :nth-child(2) > :nth-child(1) {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 .end-box3 > :nth-child(3) > :nth-child(1) {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 .end-box3 > :nth-child(4) > :nth-child(1) {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
 }
 .end-box3 > :nth-child(4) {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 .end-box3 {
-  height: 275px;
-  margin-left: 70px;
+  height: 27.5rem;
+  margin-left: 7rem;
 }
 .end-box3 > :nth-child(5) > :nth-child(1) {
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 }
 .end-box3 > :nth-child(5) > :nth-child(2) > :nth-child(1) {
-  width: 27px;
-  height: 27px;
-  margin-right: 5px;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin-right: 0.5rem;
 }
 .end-box3 > :nth-child(5) > :nth-child(2) {
   display: flex;
@@ -1995,19 +2080,19 @@ body {
   align-items: center;
 }
 .end-box4 > :nth-child(2) > :nth-child(1) > :nth-child(1) {
-  width: 24px;
-  height: 22.85px;
-  margin-right: 10px;
+  width: 2.4rem;
+  height: 2.285rem;
+  margin-right: 1rem;
 }
 .end-box4 > :nth-child(3) > :nth-child(1) > :nth-child(1) {
-  width: 24px;
-  height: 20px;
-  margin-right: 10px;
+  width: 2.4rem;
+  height: 2rem;
+  margin-right: 1rem;
 }
 .end-box4 > :nth-child(4) > :nth-child(1) > :nth-child(1) {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 1rem;
   text-decoration: none;
 }
 .end-box4 > :nth-child(2) > :nth-child(1) {
@@ -2023,60 +2108,60 @@ body {
   color: black;
 }
 .chungnhan {
-  width: 84px;
-  height: 26px;
+  width: 8.4rem;
+  height: 2.6rem;
   cursor: pointer;
 }
 
 .thanhtoan {
-  width: 42px;
-  height: 29px;
+  width: 4.2rem;
+  height: 2.9rem;
 }
 
 .end-box4 {
-  height: 300px;
+  height: 30rem;
 }
 
 .zalo-end {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .chungnhan-container > :nth-child(1) {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .chungnhan-container > :nth-child(1) > :nth-child(1) {
-  margin-right: 5px;
+  margin-right: 0.5rem;
 }
 .hotrothanhtoan-end {
   font-weight: 600;
 }
 .hotrothanhtoan-end > :nth-child(1) {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .gachchanmax {
-  width: 1210px;
+  width: 121rem;
   background-color: rgba(158, 158, 158, 0.493);
-  height: 1px;
-  margin-top: 20px;
+  height: 0.1rem;
+  margin-top: 2rem;
 }
 .end-end {
   display: flex;
   justify-content: space-between;
-  font-size: 12px;
-  width: 1210px;
-  margin-top: 12px;
+  font-size: 1.2rem;
+  width: 121rem;
+  margin-top: 1.2rem;
 }
 
 .end-end > :nth-child(1) > :nth-child(1) {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .end-end > :nth-child(1) > :nth-child(2) {
-  line-height: 15px;
+  line-height: 1.5rem;
 }
 .end-end > :nth-child(2) > :nth-child(1) {
-  line-height: 15px;
+  line-height: 1.5rem;
 }
